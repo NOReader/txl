@@ -137,6 +137,7 @@ public class dialer extends Fragment implements View.OnClickListener,View.OnTouc
                     Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + editText.getText()));
                     startActivity(intent);
                 }
+                break;
             }
             case R.id.bt15:
             {
