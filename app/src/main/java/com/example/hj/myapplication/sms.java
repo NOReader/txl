@@ -11,9 +11,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,7 +25,7 @@ import java.util.Map;
 
 
 public class sms extends Fragment implements View.OnClickListener {
-    int[]res={R.id.a,R.id.b,R.id.c,R.id.d,R.id.e,R.id.f,R.id.g};
+    int[]res={R.id.a,R.id.b,R.id.c,R.id.d,R.id.e,R.id.f,R.id.g,R.id.h};
     List<ImageView>list=new ArrayList<>();
     List<Map<String,Object>>smslist;
     boolean flag=false;
@@ -42,10 +45,9 @@ public class sms extends Fragment implements View.OnClickListener {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                startActivity(new Intent(getActivity(),send.class));
+                startActivity(new Intent(getActivity(), send.class));
             }
         });
-
         return  view;
     }
     public List<Map<String,Object>> getDatalist()
@@ -74,15 +76,46 @@ public class sms extends Fragment implements View.OnClickListener {
                 else startanim();
                 break;
             }
+            case R.id.b:
+            {
+                Toast.makeText(getActivity(),"发送照片",Toast.LENGTH_SHORT).show();
+                break;
+            }
+            case R.id.c:
+            {
+                Toast.makeText(getActivity(),"发送音乐",Toast.LENGTH_SHORT).show();
+                break;
+            }
+            case R.id.d:
+            {
+                Toast.makeText(getActivity(),"发送位置",Toast.LENGTH_SHORT).show();
+                break;
+            }
+            case R.id.e:
+            {
+                Toast.makeText(getActivity(),"发送照片",Toast.LENGTH_SHORT).show();
+                break;
+            }
             case R.id.f:
             {
+                Toast.makeText(getActivity(),"发送联系人",Toast.LENGTH_SHORT).show();
+                break;
+            }
+            case R.id.g:
+            {
+                Toast.makeText(getActivity(),"发送录音",Toast.LENGTH_SHORT).show();
+                break;
+            }
+            case R.id.h:
+            {
                 startActivity(new Intent(getActivity(),send.class));
+                break;
             }
         }
     }
 
     private void closeanim() {
-        for(int i=0;i<res.length-1;i++)
+        for(int i=1;i<res.length;i++)
         {
             ObjectAnimator animator=ObjectAnimator.ofFloat(list.get(i),"translationY",i*-150,0).setDuration(500);
             animator.start();
@@ -91,7 +124,7 @@ public class sms extends Fragment implements View.OnClickListener {
     }
 
     private void startanim() {
-        for(int i=0;i<res.length-1;i++)
+        for(int i=1;i<res.length;i++)
         {
             ObjectAnimator animator=ObjectAnimator.ofFloat(list.get(i),"translationY",0f,i*-150).setDuration(500);
             animator.start();

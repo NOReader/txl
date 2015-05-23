@@ -1,23 +1,52 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:layout_height="match_parent"
     tools:context="com.example.hj.myapplication.send"
+    android:background="#fff"
     android:orientation="vertical">
-    <MultiAutoCompleteTextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/phone"/>
-    <EditText
+        android:layout_height="60dp"
+        android:background="#a5000000">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="短信"
+            android:textSize="25dp"
+            android:textColor="#fff"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="20dp"/>
+    </LinearLayout>
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/smstxt"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="发送"
-        android:id="@+id/send"/>
-
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <MultiAutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/phone"
+            android:hint="请输入电话号码"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="10dp"
+            >
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/smstxt"
+                android:hint="请输入短信内容"/>
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/send"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/send"
+                />
+        </LinearLayout>
+    </RelativeLayout>
 </LinearLayout>

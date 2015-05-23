@@ -1,5 +1,6 @@
 package com.example.hj.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
@@ -8,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -16,14 +18,16 @@ import java.util.List;
 public class send extends ActionBarActivity {
     private EditText phone;
     private EditText smstxt;
-    private Button send;
+    private ImageView send;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send);
         phone= (EditText) findViewById(R.id.phone);
-        send= (Button) findViewById(R.id.send);
+        send= (ImageView) findViewById(R.id.send);
         smstxt= (EditText) findViewById(R.id.smstxt);
+        Intent intent=getIntent();
+        phone.setText(intent.getStringExtra("phone"));
         send.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
                 String phone_number =phone.getText().toString();

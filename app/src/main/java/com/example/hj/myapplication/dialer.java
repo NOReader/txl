@@ -43,6 +43,17 @@ public class dialer extends Fragment implements View.OnClickListener,View.OnTouc
         LinearLayout del= (LinearLayout) view.findViewById(R.id.del);
         bt1.setOnClickListener(this);
         bt1.setOnTouchListener(this);
+        bt2.setOnTouchListener(this);
+        bt3.setOnTouchListener(this);
+        bt4.setOnTouchListener(this);
+        bt5.setOnTouchListener(this);
+        bt6.setOnTouchListener(this);
+        bt7.setOnTouchListener(this);
+        bt8.setOnTouchListener(this);
+        bt9.setOnTouchListener(this);
+        bt10.setOnTouchListener(this);
+        bt11.setOnTouchListener(this);
+        bt12.setOnTouchListener(this);
         bt2.setOnClickListener(this);
         bt3.setOnClickListener(this);
         bt4.setOnClickListener(this);
@@ -127,6 +138,13 @@ public class dialer extends Fragment implements View.OnClickListener,View.OnTouc
                     startActivity(intent);
                 }
             }
+            case R.id.bt15:
+            {
+                Intent intent=new Intent(getActivity(),send.class);
+                intent.putExtra("phone",editText.getText().toString());
+                startActivity(intent);
+                break;
+            }
             case R.id.del: {
                 try {
                     editText.setText(str.substring(0, str.length()-1));
@@ -143,7 +161,6 @@ public class dialer extends Fragment implements View.OnClickListener,View.OnTouc
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
         if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
-            //更改为按下时的背景图片
             view.setBackgroundColor(Color.GRAY);
         }else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
             view.setBackgroundColor(Color.WHITE);}

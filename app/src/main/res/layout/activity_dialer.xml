@@ -1,6 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context=".MainActivity" android:orientation="vertical">
+    android:layout_height="match_parent" tools:context=".MainActivity" android:orientation="vertical"
+    android:background="#fff">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -298,24 +299,11 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:orientation="horizontal"
-                android:id="@+id/bt13"
-                android:gravity="center">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="拨号"
-                    android:textSize="30dp"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="horizontal"
                 android:id="@+id/bt14"
-                android:gravity="center">
+                android:gravity="center"
+                android:background="#ff25fff7">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -325,10 +313,27 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                android:id="@+id/bt13"
+                android:gravity="center"
+                android:background="#ff38ff95">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="拨号"
+                    android:textSize="30dp"
+
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="horizontal"
                 android:id="@+id/bt15"
                 android:gravity="center"
+                android:background="#fff5ff64"
                 >
                 <TextView
                     android:layout_width="wrap_content"
